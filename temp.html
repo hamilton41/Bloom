@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Cropping Preview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.min.css" integrity="sha512-+DrHTt8DInzYh6/Z5W0wMy5fAwrtu1MEfYdsIa6BHD1uPcQUXtmRMfrkABRzBf5Qcx8EvXl+PqLfsH4amMnjsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<input type="file" id="inputImage" accept="image/*">
+<br>
+<img id="preview" src="" alt="Preview">
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha512-tWMvdVz0hK4TzvlWZ2n8b1bA6MrrD9bVdSdVSB7FhJc7z2G8lTkSjLZG7iWTw+1w6rQ+20Qs9kgu3IbR9XOqKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.min.js" integrity="sha512-6NL4a5b1ThnlyJWn3neY58Rt3F+yhoC++KLZ+vb5UQl02p0z9gs3i5sl1kiwR5z6KywR3ChVMh2t2wRqP2O8dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  $(document).ready(function(){
+    // 初始化 Cropper.js
+    var cropper = new Cropper(document.getElementById('preview'), {
+      aspectRatio: 1, // 裁剪框的寬高比例
+      viewMode: 1 // 裁剪框限制在圖片內部
+    });
+
+    // 監聽 input 檔案選擇事件
+    $('#inputImage').on('change', function (e) {
+      var fileReader = new FileReader();
+      fileReader.onload = function (e) {
+        // 設定裁剪框的圖片
+        cropper.replace(e.target.result);
+      };
+      // 讀取選擇的檔案
+      fileReader.readAsDataURL(this.files[0]);
+    });
+  });
+</script>
+
+</body>
+</html>
