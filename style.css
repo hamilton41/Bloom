@@ -466,6 +466,8 @@ nav ul li a:hover{
   margin: auto;
   padding: 5px;
 }
+
+/* image-cropper照片選擇器 */
 .submitButton{
   display: none;
 }
@@ -494,6 +496,7 @@ nav ul li a:hover{
 }
 .image-select-pic img{
   width: 100%;
+  height: auto;
 }
 .image-select-btn{
   position: absolute;
