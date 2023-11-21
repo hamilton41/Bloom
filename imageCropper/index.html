@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Bloom/style.css">
+
+
+    <!-- imageCropper會用到的 -->
+    <link rel="stylesheet" href="./imageCropper.css">
+    <script src="./imageCropper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+</head>
+<body>
+    <figure class="snip1218">
+        <div class="image"><img id="a2" src="./upload/undefineda2.jpg" alt="sample70">
+        <form id="uploadForm_a2" class="form" action="imgUpload.php" method="post" enctype="multipart/form-data">
+            <label for="file">選擇要上傳的文檔：</label>
+            <input type="file" class="file" name="file" id="file"><br>
+            <input type="hidden" name="user_data" class="user_data_field" value="undefined">
+            <input type="hidden" name="tag_name" value="a2">
+            <input class="submitButton" type="submit" value="upload">
+        </form>
+
+        </div>
+        <figcaption>
+            <h1 id="editableTextt4" class="img_tag titleEditable">Our Best Cars</h1><button id="saveButtoneditableTextt4" class="textEditable">Save Text</button>
+        </figcaption>
+    </figure>
+
+
+    <div class="img_tag section-1-image">
+        <img id="b1" src="./upload/undefinedb1.jpg" alt="">
+        <form id="uploadForm_b1" class="form" action="imgUpload.php" method="post" enctype="multipart/form-data">
+            <label for="file">選擇要上傳的文檔：</label>
+            <input type="file" class="file" name="file" id="file"><br>
+            <input type="hidden" name="user_data" class="user_data_field" value="undefined">
+            <input type="hidden" name="tag_name" value="b1">
+            <input class="submitButton" type="submit" value="upload">
+        </form>
+
+    </div>
+</body>
+</html>
