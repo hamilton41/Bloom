@@ -144,16 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const user_data_field = document.querySelector(`#uploadForm_${tagId} .user_data_field`);
         user_data_field.value = userEmail;
 
-
-
         // Convert user object to JSON string
         const userStringify = JSON.stringify(user);
 
 
         xhr.send(JSON.stringify({ user: userStringify }));
     }
-
-
 });
 
 
@@ -363,6 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 檔案生成機制
 const generateButton = document.getElementById('generateButton');
+
 generateButton.addEventListener('click', () => {
     // 獲取整個HTML文件的內容
     const htmlContent = document.documentElement.outerHTML;
@@ -381,5 +378,3 @@ generateButton.addEventListener('click', () => {
     xhr.send("htmlContent=" + encodeURIComponent(htmlContent));
 });
 
-
-//
