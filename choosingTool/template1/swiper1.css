@@ -1,0 +1,102 @@
+/* Swiper  */
+.swiper1 {
+    width: 100%;
+    height: 100vh;
+    cursor: pointer;
+    position: relative;
+}
+
+.swiper1 .swiper-slide {
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.swiper1 .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    opacity: 1;
+    background-color: transparent;
+}
+
+.swiper1 .swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper1 .swiper-pagination-fraction {
+    bottom: 100px;
+}
+
+.swiper1 .swiper-pagination-bullet::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: .2;
+    transition: .5s;
+
+}
+
+.swiper1 .swiper-pagination-bullet-active::after {
+    background-color: red !important;
+    opacity: 1 !important;
+}
+
+.swiper1 .news {
+    position: absolute;
+    bottom: 150px;
+    left: 100px;
+    color: white;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.swiper1 .news p {
+    font-size: 25px;
+
+}
+
+.swiper1 .bi-chevron-double-down {
+    position: absolute;
+    bottom: 150px;
+    right: 100px;
+    color: black;
+    font-size: 50px;
+    line-height: 50px;
+    z-index: 11;
+    transition: .3s;
+    cursor: pointer;
+
+
+}
+
+.swiper1 .bi-chevron-double-down:hover {
+    color: red;
+    transform: translateY(10px);
+}
+
+@media screen and (max-width: 768px) {
+    .swiper1 .swiper-slide {
+        background-position: right;
+    } 
+
+    .swiper1 .news {
+        flex-direction: column;
+        left: 20px;
+    }
+
+    .swiper1 .news p {
+        font-size: 20px;
+
+        line-height: 30px;
+    }
+
+    .swiper1 .bi-chevron-double-down {
+        right: 20px;
+        bottom: 60px;
+    }
+}
+
