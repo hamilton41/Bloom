@@ -1,0 +1,209 @@
+
+
+
+
+.body3 .swiper3  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 80px;
+    color: white;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+.body3 .swiper3 p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    color: white;
+    text-align: left;
+}
+
+
+.swiper3 {
+    width: 100%;
+    height: 650px;
+    /* swiper置中 */
+    transform: translateX(-50%);
+    left: 50%;
+    background-color: transparent;
+    position: relative;
+
+    margin-top: 50px;
+
+}
+
+.swiper3 .swiper-slide {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 0 20px; */
+    box-sizing: border-box;
+
+}
+
+.swiper3 .swiper-slide .img {
+    /* 圖片比例2:3 */
+    width: 900px;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+
+    transition: .5s ease .1s;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.swiper3 .swiper-slide .img .text {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    margin: 50px;
+}
+
+
+/* prev */
+.swiper3 .swiper-button-prev {
+    top: 300px;
+    /* 減半張圖片寬 */
+    left: calc(50vw - 450px);
+    transform: translateX(-100%);
+    /* 底線長度 .swiper-button-prev::after也要修改 */
+    width: 150px;
+    flex-direction: column;
+}
+
+.swiper3 .swiper-button-prev::before {
+    content: "上一則";
+    transition: .5s;
+    color: black;
+    transform: translateX(40px);
+
+}
+
+.swiper3 .swiper-button-prev::after {
+    /* 底線長度 .swiper-button-prev也要修改 */
+    width: 150px;
+    height: 10px;
+    content: "";
+    transition: .5s;
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+
+}
+
+.swiper3 .swiper-button-prev:hover::after {
+    width: 200px;
+    transform: translateX(25px);
+    border-bottom: 1.5px solid red;
+}
+
+/* next */
+.swiper3 .swiper-button-next {
+    top: 300px;
+    right: calc(50vw - 450px);
+    transform: translateX(100%);
+    width: 150px;
+    flex-direction: column;
+}
+
+.swiper3 .swiper-button-next::before {
+    content: "下一則";
+    transition: .5s;
+    color: black;
+    transform: translateX(-40px);
+
+}
+
+
+.swiper3 .swiper-button-next::after {
+    width: 150px;
+    height: 10px;
+    content: "";
+    transition: .5s;
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+
+}
+
+.swiper3 .swiper-button-next:hover::after {
+    width: 200px;
+    transform: translateX(-25px);
+    border-bottom: 1.5px solid red;
+}
+
+
+
+.swiper3 .swiper-pagination-bullet {
+    width: 20px;
+    height: 10px;
+    display: inline-flex;
+    opacity: 1;
+    background-color: transparent;
+}
+
+
+.swiper3 .swiper-pagination-bullet::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: .2;
+}
+
+.swiper3 .swiper-pagination-bullet-active::after {
+    content: '';
+    background-color: red !important;
+    opacity: 1 !important;
+}
+
+@media screen and (max-width: 1024px) {
+
+
+    .swiper3 .swiper-button-next {
+        display: none;
+    }
+
+    .swiper3 .swiper-button-prev {
+        display: none;
+    }
+
+
+    .swiper3 .swiper-slide .img {
+        /* 圖片比例2:3 */
+        width: 90vw;
+        height: 60vw;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .swiper3 .swiper-pagination {
+        display: none;
+    }
+
+    .swiper3 .swiper-slide .img .text {
+        opacity: 0;
+        transition: 0s;
+        margin: 20px;
+        /* new */
+        transition: .8s;
+    }
+
+    .swiper3 .swiper-slide.swiper-slide-active .img .text {
+        opacity: 1;
+
+        transform: translateY(120%);
+
+    }
+
+    .swiper3 .swiper-slide .img .text p,
+    .swiper3 .swiper-slide .img .text h1 {
+        color: #000;
+    }
+}
