@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom | Home</title>
+    <link rel="stylesheet" class="style_file" href="style.css">
+    <link rel="stylesheet" href="questions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700;800&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.1.0/cropper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="main.js" type="module"></script>
+    <script src="slide.js"></script>
+
+    <script src="imageCropper.js"></script>
+    <link rel="stylesheet" href="./imageCropper.css">
+</head>
+<style>
+    .question_container {
+        display: none;
+    }
+
+    .pricing_container {
+        display: none;
+    }
+</style>
+
+<body>
+    <header id="main-header">
+        <h1 id="brandName" class="logo">Bloom</h1>
+        <div>
+            <div style="color:white;" id="displayName"></div>
+            <button type="button" class="google-btn">Connect with <span>Google</span></button>
+            <button type="button" id="logout-button" style="display:none;">sign out <span>Google</span></button>
+        </div>
+    </header>
+    <section id="a"></section>
+    <div class="container">
+        <video autoplay loop muted plays-inline class="background">
+            <source src="" type="video/mp4">
+        </video>
+        <div class="content">
+            <h1 id="t1">Bloom - Where Art Meets Web</h1>
+            <p id="p1">Redefine your online presence with captivating web designs
+                that leave a lasting digital
+                impression
+            </p>
+            <button class="btn-primary">
+                Start
+            </button>
+            <button id="generateButton">Generate HTML</button>
+        </div>
+    </div>
+    <div class="question_container">
+        <div class="carousel">
+            <div class="slider">
+                <section>
+                    <form class="input_container" id="msform">
+                        <h2 class="fs-title">Personal Details</h2>
+                        <h3 class="fs-subtitle">Tell us something about you</h3>
+                        <input type="text" name="fname" placeholder="First Name" />
+                        <input type="text" name="lname" placeholder="Company Name" />
+                    </form>
+                </section>
+                <section>
+                    <form>
+                        <h2 class="fs-title">Design Preference</h2>
+                        <h3 class="fs-subtitle">Tell us what you like</h3>
+
+                        <span class="theme-btn-container">
+                            <li><button class="dark-theme-btn theme-btn">Dark and Mysterious
+                        </span></button></li>
+                        <li><button class="light-theme-btn theme-btn">Bright And Open</button></li>
+                        </span>
+                    </form>
+                </section>
+                <section>
+                    <form class="input_container" id="msform">
+                        <h2 class="fs-title">Personal Details</h2>
+                        <h3 class="fs-subtitle">What's your Industry</h3>
+                        <input type="text" name="fname" placeholder="Industry" />
+                    </form>
+                </section>
+                <section>
+                    <form class="input_container" id="msform">
+                        <h2 class="fs-title">Upload Design Pictures</h2>
+                        <h3 class="fs-subtitle">Do you want to upload picture files as design material?</h3>
+                        <input type="file" id="file" aria-label="File browser example" class="input-file">
+                        <button class="skip-btn">Skip</button>
+                    </form>
+                </section>
+                <section>
+                    <form class="input_container" id="msform">
+                        <h2 class="fs-title">Upload Logo</h2>
+                        <h3 class="fs-subtitle">Do you want to upload your own logo?</h3>
+                        <input type="file" id="file" aria-label="File browser example" class="input-file">
+                        <button class="skip-btn">Generate for Me</button>
+                        <h3 class="fs-subtitle">This option will cost $10(including tax), and no additional fees will be
+                            charged</h3>
+                    </form>
+                </section>
+                <section>
+                    <form class="input_container" id="msform">
+                        <h2 class="fs-title">Upload Other Material Pictures</h2>
+                        <h3 class="fs-subtitle">Reminder: Name the pictures in English</h3>
+                        <input type="file" id="file" aria-label="File browser example" class="input-file">
+                    </form>
+                </section>
+                <section>
+                    <form class="input_container" id="msform">
+                        <h2 class="fs-title">You're all set!</h2>
+                        <a class="pay">Next</a>
+                    </form>
+                </section>
+            </div>
+            <div class="controls">
+                <div class="arrow left">
+                    <button>Back</button>
+                </div>
+                <div class="arrow right">
+                    <button>Next</button>
+                </div>
+
+                <ul>
+                    <li class="selected"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing_container">
+        <div class="pricing">
+            <div class="pricing-plan basic">
+                <h2>Basic</h2>
+                <a><span>$19.99</span> / month</a>
+                <ul>
+                    <li>1 Website</li>
+                    <li>1GB Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <a href="#">Sign up</a>
+            </div>
+            <div class="pricing-plan premium">
+                <h2>Premium</h2>
+                <a><span>$29.99</span> / month</a>
+                <ul>
+                    <li>10 Websites</li>
+                    <li>10GB Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <a href="#">Sign up</a>
+            </div>
+            <div class="pricing-plan advanced">
+                <h2>Advanced</h2>
+                <a><span>$39.99</span> / month</a>
+                <ul>
+                    <li>Unlimited Websites</li>
+                    <li>Unlimited Storage</li>
+                    <li>Unlimted Bandwidth</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <a href="#">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="b" class="main_container">
+        <h1 id="t13" class="header1">Bloom: Nurturing Growth, Inspiring Life.</h1>
+        <div class="section_container">
+            <div id="first_container" class="section_card_container">
+                <figure class="snip1218">
+                    <div class="image">
+
+                        <img id="a1" src="./assets/img/undefineda1.jpg" alt="" />
+                    </div>
+                    <figcaption>
+                        <h1 id="t14" class="img_tag">Bloom</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="snip1218">
+                    <div class="image"><img id="a2" src="./assets/img/a2.jpg" alt="sample70" />
+                    </div>
+                    <figcaption>
+                        <h1 id="t15" class="img_tag">Our Best Cars</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="snip1218">
+                    <div class="image"><img id="a3" src="./assets/img/a3.jpg" alt="sample70" />
+                    </div>
+                    <figcaption>
+                        <h1 id="t16" class="img_tag">Our Models</h3>
+                    </figcaption>
+                </figure>
+
+                <figure class="snip1218">
+                    <div class="image"><img id="a4" src="./assets/img/a4.jpg" alt="sample70" />
+                    </div>
+                    <figcaption>
+                        <h1 class="img_tag">Our Success</h3>
+                    </figcaption>
+                </figure>
+
+            </div>
+        </div>
+
+        <div class="article_container">
+            <h1 id="t2" class="header1">Flourish with Bloom: Cultivating Success
+                Together.</h1>
+            <p id="p2">At Bloom, we are not just a web designing company; we are
+                artists, creators, and dreamers. Our
+                passion
+                lies in crafting stunning web experiences that resonate with your audience and elevate your brand to new
+                heights. From the seed of an idea to the final product, we nurture every aspect of your web presence
+                with care and precision.
+                We understand that your website is more than just a digital platform; it is the virtual gateway to your
+                business or organization. As such, we embark on a collaborative journey with you, immersing ourselves in
+                your vision, goals, and values. Our team of talented designers, developers, and strategists work
+                seamlessly together, drawing inspiration from the latest design trends and industry best practices.</p>
+        </div>
+        <section id="c"></section>
+        <div id="second_container" class="sections_container">
+            <section class="section-1">
+                <div class="section-1-text">
+                    <p id="p3">Explore With Our App</p>
+                    <h1 id="t3">From Beginner to Pro, trusted by 2 million people</h1>
+                    <div class="section_btn_container">
+                        <button class="btn1">Get Started</button>
+                    </div>
+                </div>
+                <div class="img_tag section-1-image">
+                    <img id="b1" src="./assets/img/b1.jpg" alt="">
+                </div>
+            </section>
+            <section class="section-2">
+                <div class="img_tag section-2-image">
+                    <img id="b2" src="./assets/img/b2.jpg" alt="">
+                </div>
+                <div class="section-2-text">
+                    <p id="p4">For Every Level</p>
+                    <h1 id="t4">Custom Design With Beautiful Images For You</h1>
+                    <div class="section_btn_container">
+                        <button class="btn1">Explore Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="d"></section>
+        <div class="article_container">
+            <h1 id="t5" class="header1">Bloom: Where Digital Visions Take Root and
+                Blossom.</h1>
+            <p id="p5"> your creative haven where digital visions are nurtured, taking
+                root and blossoming into
+                extraordinary
+                realities. We are a team of passionate innovators who breathe life into your ideas, cultivating
+                transformative digital solutions that leave a lasting impact.
+
+                At Bloom, we believe in the power of collaboration. We work closely with you to understand your
+                aspirations, goals, and unique challenges. With this deep insight, we sow the seeds of creativity and
+                technical expertise to design websites, applications, and digital experiences that are as functional as
+                they are visually captivating.</p>
+        </div>
+
+
+        <!-- New -->
+        <div id="third_container" class="image-container">
+            <div class="img_tag image-box">
+                <img id="c1" src="./assets/img/c1.jpg" alt="Image 1">
+                <div class="image-text">
+                    <p id="t6">Where Web Designs Blossom into Digital Artistry</p>
+                    <h1 id="p6">Cultivating Exquisite Web Experiences for Your Success
+                    </h1>
+                </div>
+            </div>
+            <div class="img_tag image-box">
+                <img id="c2" src="./assets/img/c2.jpg" alt="Image 2">
+                <div class="image-text">
+                    <p id="t7">Cultivating Extraordinary Web Experiences</p>
+                    <h1 id="p7">Let Your Brand Blossom with Our Creative Web Designs
+                    </h1>
+                </div>
+            </div>
+
+            <div class="img_tag image-box">
+                <img id="c3" src="./assets/img/c3.jpg" alt="Image 2">
+                <div class="image-text">
+                    <p id="t8">Cultivating Extraordinary Web Experiences</p>
+                    <h1 id="p8">Your Web Journey Begins: Unlocking digital
+                        possibilities.</h1>
+                </div>
+            </div>
+
+            <div class="img_tag image-box">
+                <img id="c4" src="./assets/img/c4.jpg" alt="Image 2">
+                <div class="image-text">
+                    <p id="t9">Cultivating Extraordinary Web Experiences</p>
+                    <h1 id="p9">Designs that Flourish: Nurturing your online growth</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="article_container">
+            <h1 id="t10" class="header1">Bloom: Nurturing Web Designs for Inspired
+                Growth.</h1>
+            <p id="p10"> Welcome to Bloom, your creative sanctuary where web designs are
+                nurtured to inspire growth and
+                prosperity. We are a dedicated team of web designers and developers passionate about crafting
+                captivating digital experiences that help your business bloom in the online world.
+
+                Our approach begins with understanding your unique goals, brand personality, and target audience. We
+                cultivate a deep connection with your vision to bring forth designs that resonate with your audience
+                on a profound level. Every project we undertake is a canvas for creativity, innovation, and
+                user-centricity.
+
+                At Bloom, we believe that aesthetics should go hand in hand with functionality. Our expert designers
+                meticulously craft visually appealing interfaces while ensuring seamless user navigation and
+                conversion optimization. Whether you need a sleek portfolio website, an engaging e-commerce
+                platform, or a custom web application, we tailor solutions that elevate your online presence.
+
+                Embracing the latest technologies and industry trends, our websites are not just visually impressive
+                but also responsive and optimized for all devices. We cultivate a delightful user experience that
+                fosters engagement and drives results, leaving a lasting impact on your visitors.</p>
+        </div>
+        <section id="e"></section>
+        <div class="article_container">
+            <h1 id="t11" class="header1">header1</h1>
+            <p id="p11">At Bloom, we are passionate about cultivating web excellence
+                that fuels your business growth.</p>
+        </div>
+
+
+
+        <div id="fourth_container" class="vertical_container">
+            <div class="main_slide">
+                <img title="main_slide"
+                    src="https://images.pexels.com/photos/814830/pexels-photo-814830.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    id="main_slide_img d1">
+            </div>
+            <div class="thumbnail">
+                <img id="d2"
+                    src="https://images.pexels.com/photos/814830/pexels-photo-814830.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    onclick="myFunction(this)" />
+                <img id="d3" onclick="myFunction(this)"
+                    src="https://images.pexels.com/photos/1816823/pexels-photo-1816823.jpeg?auto=compress&cs=tinysrgb&w=1600" />
+                <img id="d4" onclick="myFunction(this)"
+                    src="https://images.pexels.com/photos/1668928/pexels-photo-1668928.jpeg?auto=compress&cs=tinysrgb&w=1600" />
+                <img id="d5" onclick="myFunction(this)"
+                    src="https://images.pexels.com/photos/1577129/pexels-photo-1577129.jpeg?auto=compress&cs=tinysrgb&w=1600" />
+                <img onclick="" src="" />
+
+            </div>
+        </div>
+
+        <div class="article_container">
+            <h1 id="t12" class="header1">Bloom: Cultivating Web Excellence for Growth.
+            </h1>
+            <p id="p12">At Bloom, we are passionate about cultivating web excellence
+                that fuels your business growth.
+                Our
+                creative team designs and develops captivating websites tailored to showcase your brand and connect
+                with your audience. With a focus on aesthetics, functionality, and seamless user experiences, we
+                cultivate the perfect digital landscape for your success. Partner with us, and let's nurture your
+                online presence to new heights together. Partner with Bloom, and together, let's nurture your web
+                presence into a thriving digital ecosystem. Watch your ideas bloom, your business flourish, and your
+                online aspirations reach new heights. Empower your brand with the transformative power of Bloom's
+                nurturing web designs.</p>
+        </div>
+
+
+    </section>
+
+
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a id="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                <a id="instagram" href="#"><i class="fa fa-instagram"></i></a>
+                <a id="youtube" href="#"><i class="fa fa-youtube"></i></a>
+                <a id="twitter" href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+
+            <div class="row">
+                <ul>
+                    <li><a href="#a">Contact us</a></li>
+                    <li><a href="#b">Our Services</a></li>
+                    <li><a href="#c">Privacy Policy</a></li>
+                    <li><a href="#d">Terms & Conditions</a></li>
+                    <li><a href="#e">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                All rights reserved &copy; 2023
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
